@@ -3,7 +3,7 @@ library(dplyr)
 library(purrr)
 
 # Ruta a tus archivos
-ruta <- "C:/Users/agusg/Documents/Proyecto CDD/Dataset"
+ruta <- "data/atp_matches_raw"
 
 # Listar todos los archivos CSV de partidos
 archivos <- list.files(path = ruta, pattern = "atp_matches_\\d{4}\\.csv", full.names = TRUE)
@@ -24,8 +24,7 @@ unique(nombres_columnas)
 df_todos <- map_dfr(archivos, ~ read_csv(.x, show_col_types = FALSE))
 
 # Guardar como CSV unificado (opcional)
-#write_csv(df_todos, "C:/Users/agusg/Documents/Proyecto CDD/atp_matches_1990_2024.csv")
-
+# write_csv(df_final, "data/tennis_dataset_final.csv")
 
 
 library(dplyr)
