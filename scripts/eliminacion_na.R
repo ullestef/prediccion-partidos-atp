@@ -204,7 +204,7 @@ setDT(df_final)
 # Tabla auxiliar sin NA
 rankA_non_na <- df_final[!is.na(player_A_rank), .(tourney_date, player_A, player_A_rank)]
 setorder(rankA_non_na, player_A, tourney_date)
-#write_csv(df_final, "C:/Users/agusg/Documents/Proyecto CDD/tennis_dataset_final.csv")
+
 # Imputar con valor más cercano
 library(data.table)
 library(lubridate)
@@ -282,7 +282,7 @@ df_final$player_B_entry[is.na(df_final$player_B_entry) | df_final$player_B_entry
 
 df_final$player_A_entry <- as.factor(df_final$player_A_entry)
 df_final$player_B_entry <- as.factor(df_final$player_B_entry)
-#write_csv(df_final, "C:/Users/agusg/Documents/Proyecto CDD/tennis_dataset_final.csv")
+
 
 library(data.table)
 setDT(df_final)
@@ -298,4 +298,4 @@ colSums(is.na(df_final))
 df_final <- na.omit(df_final)
 nrow(df_final)
 summary(df_final)
-write_csv(df_final, "C:/Users/agusg/Documents/Proyecto CDD/tennis_dataset_final.csv")
+write_csv(df_final, "data/tennis_dataset_final.csv")
