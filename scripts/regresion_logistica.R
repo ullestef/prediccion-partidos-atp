@@ -25,8 +25,8 @@ set.seed(42)
 RECALC_RF_IMPORTANCE <- TRUE   # Pone FALSE si ya tenés 01_importancia_rf_top20.png/CSV
 RECALC_CV            <- TRUE   # Pone FALSE si ya tenés resumen_cv_auc.csv
 
-ruta_csv <- file.path(path.expand("~"), "Desktop", "TP CIENCIA DE DATOS", "df_transform.csv")
-carpeta_graficos <- file.path(path.expand("~"), "Desktop", "Graficos-TP-RL")
+ruta_csv <- "data/df_transform.csv"
+carpeta_graficos <- "graficos"
 if (!dir.exists(carpeta_graficos)) dir.create(carpeta_graficos, recursive = TRUE)
 
 # -----------------------------
