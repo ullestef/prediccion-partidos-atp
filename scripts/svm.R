@@ -5,9 +5,9 @@ library(readxl)
 
 #1. Cargamos el dataset con codificación UTF-8
 
-data <- read.csv("C:/Users/estef/Downloads/df_transform.csv", encoding = "UTF-8", 
+data <- read.csv("data/df_transform.csv", encoding = "UTF-8",
                  stringsAsFactors = FALSE,
-                 check.names = FALSE) # Evita que R modifique nombres de columnas
+                 check.names = FALSE)
 
 # Verificamos las primeras filas y estructura
 head(data)
