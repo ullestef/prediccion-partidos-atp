@@ -1,13 +1,13 @@
 library(readr)
-df <- read_csv("tennis_dataset_final.csv")
+df <- read_csv("data/tennis_dataset_final.csv")
 summary(df)
 colnames(df)
 library(data.table)
 setDT(df)
 # Entry como factor, imputando vacíos a "Direct"
 
-df_final$player_A_entry <- as.factor(df_final$player_A_entry)
-df_final$player_B_entry <- as.factor(df_final$player_B_entry)
+df$player_A_entry <- as.factor(df$player_A_entry)
+df$player_B_entry <- as.factor(df$player_B_entry)
 
 
 ## Si querés dummy para has_seed
@@ -242,4 +242,8 @@ cols_leak <- c(
 )
 
 df[, (cols_leak) := NULL]
+
+write_csv(df, "data/df_transform.csv")
+
+
 names(df)
