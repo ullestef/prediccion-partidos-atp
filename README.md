@@ -65,3 +65,24 @@ R · Regresión Logística · SVM · XGBoost · Random Forest · Validación Cru
 
 Proyecto grupal desarrollado para la materia Ciencia de Datos para la Toma de
 Decisiones, Facultad de Ingeniería, Universidad de Buenos Aires (UBA).
+
+## Cómo obtener los datos
+
+Este proyecto usa datos públicos del repositorio de Jeff Sackmann:
+https://github.com/JeffSackmann/tennis_atp (licencia CC BY-NC-SA 4.0).
+
+1. Descargá los archivos `atp_matches_YYYY.csv` (1990–2024) y colocalos en `data/atp_matches_raw/`.
+2. Corré los scripts en este orden: `eliminacion_na.R` → `transformacion_variables.R` → `svm.R` / `regresion_logistica.R`.
+
+## Limitaciones y decisiones metodológicas
+
+- **Split train/test aleatorio, no temporal**: se usó `createDataPartition` (80/20
+  aleatorio) en vez de dividir por fecha. Es una decisión razonable dado que las
+  variables ya son históricas por jugador, pero implica que el modelo no fue
+  evaluado en un escenario estrictamente "futuro desconocido".
+- **El modelo SVM se entrenó y tuneó sobre una muestra estratificada de ~5.000
+  filas** (no sobre el 80% completo de train) por el costo computacional del
+  kernel radial con grid search.
+
+
+  
